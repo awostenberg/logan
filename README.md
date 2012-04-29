@@ -6,7 +6,7 @@ logan: syslog log analysis
 
 logan: logan x.log
 
-plots syslog event activity in a time series. For example:
+Plots syslog event activity in a time series using incanter. For example:
 
     => syslog -T utc >x.log
     => sh run.sh logan x.log
@@ -23,9 +23,13 @@ to build a standalone .jar for endusers and run that:
 to run from the repl
 
     => lein repl
-    => user> (use '(incanter core charts))
-    => user> (use '(logan.core))
-    => user> (view (histogram (ordinals (syslog-dates "test/data/sample.log"))))
+    user> (use '(incanter core charts))
+    user> (use '(logan.core))
+    user> (view (histogram (ordinals (syslog-dates "test/data/sample.log"))))
+
+to run the tests
+
+    => lein test
 
 ## License
 
